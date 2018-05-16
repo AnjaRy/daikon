@@ -1,0 +1,13 @@
+Preprocessing:
+1. Normalisieren aller Daten
+2. Tokenisieren aller Daten
+3. Truecasing modell mit train daten trainieren
+4. Truecasing Modell auf alles anwenden
+5. BPE Modell auf (nach truecasing) zusammengefügten Train trainieren (siehe verbesserungen)
+6. BPE auf alles anwenden
+
+Verbesserungen
+1. Gemeinsames BPE-Modell: beide trainingsset aneinandergehängt mit cat corpus.train.de corpus.train.en
+2. Grösseres Modell verwenden: Modell vergrössert auf 75 000 Zeichen
+3. Satzsequenz umkehren
+
