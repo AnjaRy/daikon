@@ -10,4 +10,5 @@ Verbesserungen
 1. Gemeinsames BPE-Modell: beide trainingsset aneinandergehängt mit cat corpus.train.de corpus.train.en
 2. Grösseres Modell verwenden: Modell vergrössert auf 75 000 Zeichen
 3. Satzsequenz umkehren
+4. Bei Übersetzung unknown-tags vermeiden
 
