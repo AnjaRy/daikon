@@ -66,6 +66,15 @@ def translate_line(session: tf.Session,
 
         if next_id in [C.EOS_ID, C.PAD_ID]:
             break
+            
+        if next_id == C.UNK_ID:
+            max = 0
+            for number in next_symbol_logits:
+                if number> max:
+                    max = number
+                else:
+                    pass
+            next_id = max
 
         translated_ids.append(next_id)
 
