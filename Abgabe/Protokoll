@@ -1,4 +1,4 @@
-Preprocessing:
+Preprocessing (mit vorgeschlagenen Skripten):
 1. Normalisieren aller Daten
 2. Tokenisieren aller Daten
 3. Truecasing modell mit train daten trainieren
@@ -13,3 +13,15 @@ Verbesserungen
 4. Bei Übersetzung unknown-tags vermeiden
 
 Erreichter Bleu-Score im Dev-Set: 0.22667117273634008
+
+Ich habe ein gemeinsames BPE-Modell benutzt, um sicherzustellen, dass in beiden Sprachen die gleichen Wörter vorkommen
+und die Chance, dass ein Wort als unknown getaggt wird, zu vermindern. Dazu habe ich für das BPE-Training die beiden Trainingssets
+zusammengefügt.
+Des Weiteren habe ich das BPE-Modell auf 75 000 Zeichen vergrössert, ebenfalls um unbekannten Wörtern zuvorzukommen.
+Im Training selbst habe ich die eingangssequenz umgekehrt, damit bei langen Sätzen der Anfang nicht vergessen wird beim Übersetzen.
+Da die Sätze in Listen gespeichert werden konnte ich einfach diese Liste mit reverse() umkehren.
+Anfangs  habe ich diese Veränderung in der Funktion read_lines gemacht, allerdings würde es dann alles umkehren (auch die zielsequenz) und
+der ganze Effekt ginge verloren. Schlussendlich habe ich die Veränderung im read_parallel gemacht, und dort nur bei der Startsequenz.
+Und als letztes ersetze ich bei der Übersetzung die unknown Tags durch das zweit häufigste Wort, da dieses immer noch eine bessere
+Übersetzung ist als ein unknown-tag.
+
