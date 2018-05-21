@@ -12,7 +12,7 @@ Verbesserungen
 3. Satzsequenz umkehren
 4. Bei Übersetzung unknown-tags vermeiden
 
-Erreichter Bleu-Score im Dev-Set: 0.22667117273634008
+Erreichter Bleu-Score im Dev-Set: 0.23
 
 Ich habe ein gemeinsames BPE-Modell benutzt, um sicherzustellen, dass in beiden Sprachen die gleichen Wörter vorkommen
 und die Chance, dass ein Wort als unknown getaggt wird, zu vermindern. Dazu habe ich für das BPE-Training die beiden Trainingssets
